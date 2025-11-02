@@ -1,40 +1,91 @@
-ExpOS implementation by Ruturaj Malavade (https://exposnitc.github.io/index.html)
+# ExpOS Implementation
 
-================================================================================================================
+**Author:** Ruturaj Malavade  
+**Project Reference:** [ExpOS Official Roadmap](https://exposnitc.github.io/index.html)
 
-Completed:
-Upto Stage 27 of roadmap
+---
 
-Not completed:
-Stage 28 of roadmap
+## 📘 Overview
 
-================================================================================================================
+This repository documents my implementation of the **Experimental Operating System (ExpOS)** project developed by NIT Calicut.  
+The project walks through building an educational operating system from the ground up, implementing core modules such as process management, memory allocation, system calls, and interrupt handling.
 
-Code is located in various places.
+**Progress:** Completed up to **Stage 27** of the official roadmap.  
+**Pending:** Stage 28 (Device Driver Interface).
 
-EXPL code is located in expl/samples (EXPL code mostly consists of programs that will be used to test XSM)
-SPL code is located in spl/spl_progs
-SPL Testing code is located in spl/spl_progs/testing
+## 🧠 Project Structure
 
-================================================================================================================
+- **expl/samples/** — EXPL programs used to test the XSM environment and system calls.  
+- **spl/spl_progs/** — SPL source files implementing OS modules such as process creation, scheduling, paging, and interrupts.  
+- **spl/spl_progs/testing/** — Test and debugging SPL routines for validating system modules.  
+- **screenshots/** — Captures of successful program execution and validation tests.  
 
-To run:
-Go into xfs-interface folder, run ./xfs-interface, then run the following 3 commands:
+---
 
-	fdisk
-	run runfile.txt
-	exit
+## ⚙️ How to Run
 
-Then, go to the xsm folder and run ./xsm
+### 1. Initialize the Disk Image  
 
-Then, login with username root and password root, then run various files that can be run, or enter "Shutdown" without quotes to shut down the simulator.
+Go to the `xfs-interface` folder and start the interface:  
 
-================================================================================================================
+```
+./xfs-interface
+```
 
-The output of some of the files being run is located in the "screenshots" folder.
+Then enter the following commands:  
 
-Some of the files tested (Screenshots in screenshots folder):
+```
+fdisk
+run runfile.txt
+exit
+```
 
-init_odd.xsm : prints odd numbers from 200-300
-even.xsm : prints even numbers from 100-200
-gcd.xsm : takes in two numbers as input, returns their GCD
+---
+
+### 2. Start the XSM Simulator  
+
+Navigate to the `xsm` directory and start the simulator:  
+
+```
+./xsm
+```
+
+---
+
+### 3. Log In and Execute Programs  
+
+```
+username: root
+password: root
+```
+
+After logging in, run available test programs,  
+or shut down with:  
+
+```
+Shutdown
+```
+
+---
+
+## 🧩 Sample Test Programs
+
+The output of several test runs is available in the `screenshots/` directory.
+
+init_odd.xsm — prints odd numbers from 200–300
+even.xsm — prints even numbers from 100–200
+gcd.xsm — takes two numbers as input and returns their GCD
+
+---
+
+## 🧱 What This Project Shows
+
+This implementation demonstrates the step-by-step construction of a working educational operating system on the **XSM simulator** using the **ExpOS** framework. It covers:
+
+- Boot and interrupt handling
+- Process creation and scheduling
+- Memory allocation and paging
+- System calls and context switching
+- Basic file system interaction and exception handling
+
+The system successfully runs user-level EXPL programs on top of the custom kernel, reflecting a hands-on understanding of OS internals.
